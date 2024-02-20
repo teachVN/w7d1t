@@ -32,5 +32,10 @@ public class ResponseExceptionHandler {
         return new ErrorResponse(e.getMessage());
     }
 
+    @ExceptionHandler(IllegalArgumentException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ErrorResponse illegalArgumentExceptionHandler(IllegalArgumentException e){
+        return new ErrorResponse(e.getMessage());
+    }
 
 }
